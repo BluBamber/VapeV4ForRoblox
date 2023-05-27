@@ -1780,15 +1780,7 @@ local teleportConnection = playersService.LocalPlayer.OnTeleport:Connect(functio
 				loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/"..readfile("vape/commithash.txt").."/NewMainScript.lua", true))() 
 			end
 		]]
-		if shared.VapeDeveloper then
-			teleportScript = 'shared.VapeDeveloper = true\n'..teleportScript
-		end
-		if shared.VapePrivate then
-			teleportScript = 'shared.VapePrivate = true\n'..teleportScript
-		end
-		if shared.VapeCustomProfile then 
-			teleportScript = "shared.VapeCustomProfile = '"..shared.VapeCustomProfile.."'\n"..teleportScript
-		end
+		teleportScript = 'shared.VapePrivate = true\n'..teleportScript
 		GuiLibrary.SaveSettings()
 		queueonteleport(teleportScript)
     end
